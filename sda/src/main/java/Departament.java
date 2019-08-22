@@ -2,6 +2,7 @@ public class Departament {
     private String nume;
     private int nivelMinimDeCompetente;
 
+
     public Departament() {
     }
 

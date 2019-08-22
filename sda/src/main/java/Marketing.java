@@ -1,8 +1,25 @@
-public class Marketing extends Departament implements Evaluator{
+public class Marketing extends Departament implements Evaluator {
 
-    public StatusCandidat evalueaza(Candidat candidat) {
-        //to be implements
-        return StatusCandidat.ACCEPTAT;
+    private static final String nume = "Marketing";
+
+    public Marketing() {
     }
 
+    public Marketing(String nume, int nivelMinimDeCompetente) {
+        super("Marketing", 4);
+    }
+
+    public StatusCandidat evalueaza(Candidat candidat) {
+
+        if (candidat.getNivelDeComp() > super.getNivelMinimDeCompetente()) {
+            return StatusCandidat.ACCEPTAT;
+        } else if (candidat.getNivelDeComp() < super.getNivelMinimDeCompetente()){
+
+            return StatusCandidat.RESPINS;
+
+        }else{
+            return StatusCandidat.IN_ASTEPTARE;
+        }
+
+    }
 }
